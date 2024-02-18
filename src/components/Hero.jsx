@@ -9,7 +9,8 @@ export const Hero = () => {
         <div className="flex flex-col justify-center">
           {/* pretitle */}
           <div className="font-semibold flex items-center uppercase">
-            <div className="w-10 h-[2px] mr-3 bg-sky-400"></div> REACT & TAILWIND 
+            <div className="w-10 h-[2px] mr-3 bg-sky-400"></div> REACT &
+            TAILWIND
           </div>
           {/* title */}
           <h1 className="text-[70px] leading-[1.1] font-light mb-4">
@@ -23,9 +24,9 @@ export const Hero = () => {
           >
             take a look
           </Link>
-         </div>
-         <div className="hidden xl:block mix-blend-multiply">
-            <img className="h-[700px] w-screen" src={SexyWoman} alt="SexyWoman" />
+        </div>
+        <div className="hidden xl:block mix-blend-multiply">
+          <img className="h-[700px] w-screen" src={SexyWoman} alt="SexyWoman" />
         </div>
       </div>
     </section>

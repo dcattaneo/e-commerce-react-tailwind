@@ -25,21 +25,21 @@ const CartProvider = ({ children }) => {
         return acc + currentItem.amount;
       }, 0);
       setItemAmount(amount);
-    };
+    }
   }, [cart]);
 
   //add to cart
   const addToCart = (product, id) => {
-    const newItem = {...product, amount: 1 };
+    const newItem = { ...product, amount: 1 };
 
-    const cartItem = cart.find(item => {
+    const cartItem = cart.find((item) => {
       return item.id === id;
     });
 
     if (cartItem) {
-      const newCart = [...cart].map(item => {
+      const newCart = [...cart].map((item) => {
         if (item.id === id) {
-          return {...item, amount: cartItem.amount + 1 };
+          return { ...item, amount: cartItem.amount + 1 };
         } else {
           return item;
         }
@@ -77,7 +77,7 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = cart.map((item) => {
         if (item.id === id) {
-          return { ...item, amount: cartItem.amount - 1};
+          return { ...item, amount: cartItem.amount - 1 };
         } else {
           return item;
         }
@@ -86,12 +86,12 @@ const CartProvider = ({ children }) => {
     }
     if (cartItem.amount < 2) {
       removeFromCart(id);
-    };
+    }
   };
 
-  return  <CartContext.Provider
-      value={
-        {
+  return (
+    <CartContext.Provider
+      value={{
         cart,
         addToCart,
         removeFromCart,
@@ -100,11 +100,11 @@ const CartProvider = ({ children }) => {
         decreaseAmount,
         itemAmount,
         total,
-      }
-    }>
+      }}
+    >
       {children}
     </CartContext.Provider>
-  
-}
+  );
+};
 
 export default CartProvider;
